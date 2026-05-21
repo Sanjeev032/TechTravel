@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: 'Outfit', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Wonder Makers brand palette — teal retained, neon-lime added */
+  --color-lime-50:  #f7ffe0;
+  --color-lime-100: #ecff99;
+  --color-lime-200: #d9f542;
+  --color-lime-300: #c8fa48;
+  --color-lime-400: #b8f02e;
+  --color-lime-500: #a2d820;
+  --color-lime-600: #7faf12;
+  --color-lime-700: #5c8009;
+  --color-lime-800: #3d5504;
+  --color-lime-900: #1e2900;
+
+  --color-blue-500: #528F81;
+  --color-blue-400: #5fae9f;
+  --color-blue-300: #7dc1b8;
+
+  --color-violet-600: #3317a4;
+  --color-violet-500: #4a2bbc;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WONDER MAKERS DARK MODE TOKENS
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  /* Structural */
+  --button-outline: rgba(255,255,255, .08);
+  --badge-outline: rgba(255,255,255, .05);
+  --elevate-1: rgba(255,255,255, .03);
+  --elevate-2: rgba(255,255,255, .06);
+  --opaque-button-border-intensity: 8;
+
+  /* Deep near-black — WM primary bg */
+  --background: 228 18% 5%;
+  --foreground: 210 20% 92%;
+  --border: 228 15% 12%;
+  --input: 228 15% 10%;
+  --ring: 78 95% 64%;
+
+  /* Surface layers */
+  --card: 228 16% 8%;
+  --card-foreground: 210 20% 90%;
+  --card-border: 228 12% 14%;
+
+  --popover: 228 16% 8%;
+  --popover-foreground: 210 20% 90%;
+  --popover-border: 228 12% 14%;
+
+  /* Neon lime primary */
+  --primary: 78 95% 64%;
+  --primary-foreground: 228 18% 5%;
+
+  --secondary: 228 15% 11%;
+  --secondary-foreground: 210 15% 70%;
+
+  --muted: 228 15% 9%;
+  --muted-foreground: 210 10% 40%;
+
+  /* Teal accent (brand) */
+  --accent: 163 40% 55%;
+  --accent-foreground: 228 18% 5%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+
+  --sidebar: 228 16% 7%;
+  --sidebar-foreground: 210 20% 82%;
+  --sidebar-border: 228 12% 13%;
+  --sidebar-primary: 78 95% 64%;
+  --sidebar-primary-foreground: 228 18% 5%;
+  --sidebar-accent: 228 15% 10%;
+  --sidebar-accent-foreground: 210 15% 70%;
+  --sidebar-ring: 78 95% 64%;
+
+  --chart-1: 78 95% 64%;
+  --chart-2: 163 40% 55%;
+  --chart-3: 78 70% 50%;
+  --chart-4: 43 96% 56%;
+  --chart-5: 27 87% 67%;
+
+  --radius: .875rem;
+
+  --shadow-xs: 0 1px 3px 0 rgba(0,0,0,.6);
+  --shadow-sm: 0 2px 6px 0 rgba(0,0,0,.6);
+  --shadow: 0 4px 14px 0 rgba(0,0,0,.6);
+  --shadow-md: 0 8px 24px 0 rgba(0,0,0,.6);
+  --shadow-lg: 0 14px 40px 0 rgba(0,0,0,.6);
+  --shadow-xl: 0 24px 60px 0 rgba(0,0,0,.7);
+  --shadow-2xl: 0 40px 90px 0 rgba(0,0,0,.8);
+
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+
+  /* ── Wonder Makers custom tokens ── */
+  --wm-lime: #c8fa48;
+  --wm-surface: hsl(228, 16%, 8%);
+  --wm-surface-2: hsl(228, 14%, 11%);
+  --wm-border: rgba(255, 255, 255, 0.06);
+  --wm-text: #f0f0f0;
+  --wm-muted: #4b5563;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BASE LAYER
+   ═══════════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scrolling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: hidden;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WONDER MAKERS TYPOGRAPHY SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* Giant editorial headings — WM H1 style */
+.wm-h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+/* Section headings — WM H2 style */
+.wm-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Card / sub headings — WM H3 */
+.wm-h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* Body text */
+.wm-body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Label / tag */
+.wm-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Oversized background marquee text */
+.wm-marquee-text {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(6rem, 13vw, 12rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WONDER MAKERS COMPONENT SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* Card — flat, no shadow, subtle bg */
+.wm-card {
+  background-color: var(--wm-surface);
+  border-radius: 0.875rem;
+  border: 1px solid var(--wm-border);
+  transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.wm-card:hover {
+  background-color: var(--wm-surface-2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pill button — WM primary CTA style */
+.wm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--wm-border);
+  background: var(--wm-surface);
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.wm-btn:hover {
+  background-color: var(--wm-surface-2);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Neon-lime accent circle on button right side */
+.wm-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: var(--wm-lime);
+  color: #080a0e;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wm-btn:hover .wm-btn-icon {
+  transform: rotate(45deg);
+}
+
+/* Primary filled button */
+.wm-btn-primary {
+  background-color: var(--wm-lime);
+  color: #080a0e;
+  border-color: var(--wm-lime);
+}
+
+.wm-btn-primary:hover {
+  background-color: #b8f02e;
+  border-color: #b8f02e;
+}
+
+/* WM section container */
+.wm-section {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* WM section label line */
+.wm-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--wm-muted);
+}
+
+.wm-section-label::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* Glass card — for elements requiring frosted look */
+.wm-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.875rem;
+}
+
+/* Neon lime gradient text */
+.wm-gradient-text {
+  background: linear-gradient(135deg, var(--wm-lime) 0%, #5fae9f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Standard teal-to-purple gradient text (brand) */
+.gradient-text {
+  background: linear-gradient(135deg, #528F81 0%, #7c6ed4 50%, #5fae9f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REVEAL ANIMATION STATES — used by GSAP hooks
+   ═══════════════════════════════════════════════════════════ */
+
+/* Text split reveal wrapper */
+.overflow-clip {
+  overflow: hidden;
+}
+
+/* Will-change hints */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MARQUEE — infinite horizontal scroll
+   ═══════════════════════════════════════════════════════════ */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 28s linear infinite;
+}
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AMBIENT BG ORBS — WM radial gradient corners
+   ═══════════════════════════════════════════════════════════ */
+.wm-ambient {
+  position: relative;
+}
+.wm-ambient::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 55vw;
+  height: 55vh;
+  background: radial-gradient(ellipse at top left, rgba(82, 143, 129, 0.09) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.wm-ambient::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 55vw;
+  height: 55vh;
+  background: radial-gradient(ellipse at top right, rgba(200, 250, 72, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE HOVER ZOOM — for project/blog cards
+   ═══════════════════════════════════════════════════════════ */
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: 0.875rem;
+}
+
+.img-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.07);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION SEPARATOR
+   ═══════════════════════════════════════════════════════════ */
+.wm-separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.06) 70%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAV HOVER UNDERLINE — WM-style
+   ═══════════════════════════════════════════════════════════ */
+.wm-nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
+}
+.wm-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--wm-lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.wm-nav-link:hover {
+  color: hsl(var(--foreground));
+}
+.wm-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FLOATING ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GLOW EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+.glow-lime {
+  box-shadow: 0 0 30px rgba(200, 250, 72, 0.14), 0 0 60px rgba(200, 250, 72, 0.06);
+}
+.glow-teal {
+  box-shadow: 0 0 30px rgba(82, 143, 129, 0.18), 0 0 60px rgba(82, 143, 129, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COUNTER
+   ═══════════════════════════════════════════════════════════ */
+.counter-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════ */
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* Legacy compatibility */
+  .cinematic-heading {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  .cinematic-sub {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .editorial-text {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.65;
+  }
+
+  /* Legacy glass card */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Section padding legacy */
+  .section-padding {
+    padding-top: clamp(4rem, 8vw, 8rem);
+    padding-bottom: clamp(4rem, 8vw, 8rem);
+  }
+}
