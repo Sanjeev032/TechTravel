@@ -14,7 +14,7 @@ export default function FooterSection() {
   const [subscribed, setSubscribed] = useState(false);
 
   // Massive brand marquee text
-  const brandName = footer?.logoText ?? "Namrata Universal";
+  const brandName = footer?.logoText ?? "Mishra Travels";
 
   const handleNavClick = (href: string) => {
     if (href.startsWith("#")) {
@@ -45,10 +45,10 @@ export default function FooterSection() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-5">
               <div className="w-6 h-6 rounded bg-[var(--wm-lime)] flex items-center justify-center shrink-0">
-                <span className="text-[#080a0e] font-bold text-xs">N</span>
+                <span className="text-[#080a0e] font-bold text-xs">M</span>
               </div>
               <span className="wm-h3 text-sm text-foreground tracking-tight">
-                {footer?.logoText ?? "Namrata Universal"}
+                {footer?.logoText ?? "Mishra Travels"}
               </span>
             </div>
             <p className="wm-body text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">

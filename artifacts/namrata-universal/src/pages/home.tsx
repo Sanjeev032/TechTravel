@@ -6,8 +6,6 @@ import AboutSection from "@/components/AboutSection";
 import TechSection from "@/components/TechSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import TeamSection from "@/components/TeamSection";
-import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 
@@ -23,8 +21,6 @@ export default function Home() {
         <TechSection />
         <ProjectsSection />
         <TestimonialsSection />
-        <TeamSection />
-        <BlogSection />
         <ContactSection />
       </main>
       <FooterSection />

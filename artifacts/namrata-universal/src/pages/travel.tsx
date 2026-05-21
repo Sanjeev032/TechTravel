@@ -584,7 +584,7 @@ export default function Travel() {
       <div className="border-t border-white/[0.05] py-6">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between flex-wrap gap-3">
           <p className="wm-body text-xs text-muted-foreground">
-            © 2024 Namrata Universal Travel. All rights reserved.
+            © 2024 Mishra Travels. All rights reserved.
           </p>
           <button
             className="wm-label text-muted-foreground hover:text-[var(--wm-lime)] transition-colors"

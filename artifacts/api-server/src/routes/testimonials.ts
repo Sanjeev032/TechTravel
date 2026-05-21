@@ -10,7 +10,7 @@ router.get("/testimonials", (req, res) => {
       company: "Delhi NCR",
       role: "Businessman",
       content:
-        "As a business owner, my goal was to find someone to create a website that was contemporary, easy to use and attractive. I wanted to add intuitive features that would allow my customers to easily find us and learn about our services. Namrata Universal delivered exactly that.",
+        "As a business owner, my goal was to find someone to create a website that was contemporary, easy to use and attractive. I wanted to add intuitive features that would allow my customers to easily find us and learn about our services. Mishra Travels delivered exactly that.",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Anupam Kumar.jpg",
     },
@@ -30,7 +30,7 @@ router.get("/testimonials", (req, res) => {
       company: "India",
       role: "Businesswoman",
       content:
-        "We hired NAMRATA UNIVERSAL for website development & designing and the rate was also in our budget. The ideas were new and fresh. Nice website design by NAMRATA UNIVERSAL!",
+        "We hired Mishra Travels for website development & designing and the rate was also in our budget. The ideas were new and fresh. Nice website design by Mishra Travels!",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Somya Gupta.jpg",
     },
@@ -40,7 +40,7 @@ router.get("/testimonials", (req, res) => {
       company: "India",
       role: "Businessman",
       content:
-        "This is the best company for website designing. I am very grateful towards Namrata Universal for their good work and support. Thank you so much!",
+        "This is the best company for website designing. I am very grateful towards Mishra Travels for their good work and support. Thank you so much!",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Amit Tamang.jpg",
     },
@@ -50,7 +50,7 @@ router.get("/testimonials", (req, res) => {
       company: "India",
       role: "Client",
       content:
-        "Namrata Universal is a good organisation with very helpful staff. I am very happy because they are available each and every time and always reply to messages and calls. Excellent service!",
+        "Mishra Travels is a good organisation with very helpful staff. I am very happy because they are available each and every time and always reply to messages and calls. Excellent service!",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Premlata Patel.jpg",
     },
@@ -60,7 +60,7 @@ router.get("/testimonials", (req, res) => {
       company: "Delhi NCR",
       role: "Businessman",
       content:
-        "Really talented team they have. I am much satisfied with team Namrata Universal. This is the top website designing company in Delhi NCR. Highly recommended!",
+        "Really talented team they have. I am much satisfied with team Mishra Travels. This is the top website designing company in Delhi NCR. Highly recommended!",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Victor Armstrong.jpg",
     },
@@ -70,7 +70,7 @@ router.get("/testimonials", (req, res) => {
       company: "Noida",
       role: "Businesswoman",
       content:
-        "Nice experience with NAMRATA UNIVERSAL. Really satisfied with the services. I can say this is the top website design company in Noida. Very professional team.",
+        "Nice experience with Mishra Travels. Really satisfied with the services. I can say this is the top website design company in Noida. Very professional team.",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Mamta Rani.jpg",
     },
@@ -90,7 +90,7 @@ router.get("/testimonials", (req, res) => {
       company: "India",
       role: "Businesswoman",
       content:
-        "What a team! NAMRATA UNIVERSAL is a really good service provider — completely down to earth and professional. Completely satisfied with the service.",
+        "What a team! Mishra Travels is a really good service provider — completely down to earth and professional. Completely satisfied with the service.",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/Kritee Dixit.jpg",
     },
@@ -100,7 +100,7 @@ router.get("/testimonials", (req, res) => {
       company: "India",
       role: "Client",
       content:
-        "Namrata Universal are the best website creators I have ever seen, and I would suggest more and more people to go for website designing with them. Superb work!",
+        "Mishra Travels are the best website creators I have ever seen, and I would suggest more and more people to go for website designing with them. Superb work!",
       rating: 5,
       avatarUrl: "https://namratauniversal.com/img/review/suraj.jpg",
     },

@@ -189,6 +189,12 @@
     scroll-behavior: auto; /* Lenis handles smooth scrolling */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
   }
 
   body {
@@ -196,6 +202,12 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
   }
 }
 
@@ -451,7 +463,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   IMAGE HOVER ZOOM — for project/blog cards
+   IMAGE HOVER ZOOM — for project cards
    ═══════════════════════════════════════════════════════════ */
 .img-zoom-container {
   overflow: hidden;

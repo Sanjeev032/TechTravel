@@ -73,7 +73,8 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <div>
-            <div ref={labelRef} className="wm-section-label wm-label text-muted-foreground mb-5">
+            <div ref={labelRef} className="wm-section-label wm-label text-muted-foreground mb-5 flex items-center gap-3">
+              <img src="https://avatars.githubusercontent.com/u/131547820?v=4" alt="Sanjeev Kumar" className="w-9 h-9 rounded-full object-cover grayscale brightness-110 border border-white/10" />
               {about?.sectionTag ?? "Who We Are"}
             </div>
             <h2 ref={headingRef} className="wm-h2 text-foreground mb-8">

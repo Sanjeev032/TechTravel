@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ArrowUpRight, Github, Linkedin, User } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,7 +10,7 @@ import { useTextReveal } from "@/hooks/useTextReveal";
 import { useMagnetic } from "@/hooks/useMagnetic";
 
 const ICON_MAP: Record<string, React.FC<{ size?: number; className?: string }>> = {
-  Mail, Phone, MapPin, Clock,
+  Mail, Phone, MapPin, Clock, Github, Linkedin, User
 };
 
 const formSchema = z.object({

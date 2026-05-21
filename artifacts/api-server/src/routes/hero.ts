@@ -4,29 +4,29 @@ const router = Router();
 
 router.get("/hero", (req, res) => {
   res.json({
-    badge: { text: "Trusted by 500+ Businesses Worldwide" },
-    title: "We Build Digital",
-    titleHighlight: "Excellence",
-    subtitle: "Software Solutions That Scale",
+    badge: { text: "Software Developer | AI Systems Builder" },
+    title: "Hi, I am",
+    titleHighlight: "Sanjeev Kumar",
+    subtitle: "Building Next-Gen Web & AI Systems",
     description:
-      "From enterprise web platforms to mobile apps and cloud solutions, Namrata Universal delivers precision-engineered software that transforms businesses and drives measurable growth.",
-    primaryCtaLabel: "Start Your Project",
-    primaryCtaHref: "#contact",
-    secondaryCtaLabel: "View Our Work",
-    secondaryCtaHref: "#projects",
+      "I build responsive, full-stack applications and integrate AI capabilities into everyday solutions. Focused on clean code and intuitive user experiences.",
+    primaryCtaLabel: "View My Projects",
+    primaryCtaHref: "#projects",
+    secondaryCtaLabel: "Contact Me",
+    secondaryCtaHref: "#contact",
     floatingTags: [
+      "TypeScript",
+      "Next.js",
       "React",
       "Node.js",
-      "Python",
-      "AWS",
-      "Flutter",
-      "TypeScript",
-      "PostgreSQL",
-      "Docker",
-      "Kubernetes",
-      "GraphQL",
-      "Next.js",
       "MongoDB",
+      "Python",
+      "Ollama",
+      "Tailwind",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Git"
     ],
   });
 });

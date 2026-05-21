@@ -101,10 +101,10 @@ export default function Navbar() {
           >
             {/* WM-style logo: small accent square + brand name */}
             <div className="w-6 h-6 rounded bg-[var(--wm-lime)] flex items-center justify-center shrink-0">
-              <span className="text-[#080a0e] font-bold text-xs leading-none">N</span>
+              <span className="text-[#080a0e] font-bold text-xs leading-none">M</span>
             </div>
             <span className="wm-h3 text-sm tracking-tight text-foreground">
-              {navbar?.logoText ?? "Namrata Universal"}
+              {navbar?.logoText ?? "Mishra Travels"}
             </span>
           </button>
 

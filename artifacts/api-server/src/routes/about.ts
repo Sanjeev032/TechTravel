@@ -4,26 +4,26 @@ const router = Router();
 
 router.get("/about", (req, res) => {
   res.json({
-    sectionTag: "Who We Are",
-    title: "Engineering the Future,",
-    titleHighlight: "One Solution at a Time",
+    sectionTag: "About Me",
+    title: "Building Software,",
+    titleHighlight: "One line of code at a time",
     description:
-      "Namrata Universal is a full-service software development company founded with a singular mission: to help businesses harness the power of technology to achieve extraordinary outcomes. We combine deep technical expertise with creative thinking to deliver solutions that are not just functional — but transformational.",
+      "I am a Software Developer and AI Systems Builder based in Delhi, India. I specialize in the MERN stack and Next.js, and enjoy integrating modern AI tools (like Ollama and LangChain) into web applications to create smarter, more efficient products.",
     mission:
-      "To deliver innovative, scalable, and reliable software solutions that empower businesses to achieve their full potential in the digital age.",
+      "To craft intuitive, performant software that solves real-world problems and leverages the latest in AI and web technologies.",
     vision:
-      "To be the most trusted technology partner for businesses worldwide, known for our craftsmanship, integrity, and commitment to excellence.",
+      "To continually learn, grow, and build systems that have a meaningful impact on users and businesses.",
     highlights: [
-      "ISO 9001:2015 Certified Quality Processes",
-      "Agile & DevOps-driven delivery",
-      "24/7 dedicated support",
-      "End-to-end product development",
-      "Post-launch maintenance & scaling",
-      "Cross-industry domain expertise",
+      "Full-Stack Web Development",
+      "AI & LLM Integration",
+      "Modern UI/UX Implementation",
+      "RESTful API Design",
+      "Database Management",
+      "Open Source Contributor"
     ],
-    yearsOfExperience: 12,
-    clientsSatisfied: 500,
-    projectsCompleted: 1200,
+    yearsOfExperience: 2,
+    clientsSatisfied: 10,
+    projectsCompleted: 25,
   });
 });
 

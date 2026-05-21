@@ -178,7 +178,8 @@ export default function HeroSection() {
 
         {/* Badge */}
         <div className="hero-badge opacity-0 inline-flex items-center gap-2 mb-10">
-          <span className="wm-glass wm-label px-4 py-1.5 rounded-full text-[var(--wm-lime)] border border-[rgba(200,250,72,0.18)]">
+          <span className="wm-glass wm-label pl-2 pr-4 py-1.5 rounded-full text-[var(--wm-lime)] border border-[rgba(200,250,72,0.18)] flex items-center gap-3">
+            <img src="https://avatars.githubusercontent.com/u/131547820?v=4" alt="Sanjeev Kumar" className="w-5 h-5 rounded-full object-cover grayscale" />
             {hero?.badge?.text ?? "Trusted by 500+ Businesses Worldwide"}
           </span>
         </div>
