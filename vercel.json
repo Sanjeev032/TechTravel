@@ -1,6 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "pnpm install --no-frozen-lockfile --ignore-scripts",
   "buildCommand": "pnpm run build",
   "outputDirectory": "artifacts/namrata-universal/dist/public",
   "rewrites": [
