@@ -25,16 +25,19 @@ export function useTextReveal<T extends HTMLElement = HTMLHeadingElement>(
   options: TextRevealOptions = {}
 ) {
   const ref = useRef<T>(null);
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
+    const currentOptions = optionsRef.current;
     const originalHTML = el.innerHTML;
-    const type = options.type ?? "words";
-    const ease = options.ease ?? EASE.cinematic;
-    const duration = options.duration ?? DUR.xl;
-    const staggerVal = options.stagger ?? (type === "chars" ? STAGGER.chars : STAGGER.words);
+    const type = currentOptions.type ?? "words";
+    const ease = currentOptions.ease ?? EASE.cinematic;
+    const duration = currentOptions.duration ?? DUR.xl;
+    const staggerVal = currentOptions.stagger ?? (type === "chars" ? STAGGER.chars : STAGGER.words);
 
     // Grab raw text, preserving any inline gradient spans
     // We split only text nodes to avoid breaking markup
@@ -84,13 +87,13 @@ export function useTextReveal<T extends HTMLElement = HTMLHeadingElement>(
         y: "0%",
         duration,
         ease,
-        delay: options.delay ?? 0,
+        delay: currentOptions.delay ?? 0,
         stagger: staggerVal,
-        scrollTrigger: options.start !== "immediate"
+        scrollTrigger: currentOptions.start !== "immediate"
           ? {
               trigger: el,
-              start: options.start ?? "top 88%",
-              once: options.once ?? true,
+              start: currentOptions.start ?? "top 88%",
+              once: currentOptions.once ?? true,
             }
           : undefined,
       });
@@ -100,7 +103,6 @@ export function useTextReveal<T extends HTMLElement = HTMLHeadingElement>(
       ctx.revert();
       el.innerHTML = originalHTML;
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return ref;

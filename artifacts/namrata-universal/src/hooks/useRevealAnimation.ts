@@ -43,42 +43,45 @@ export function useRevealAnimation<T extends HTMLElement = HTMLDivElement>(
   options: RevealOptions = {}
 ) {
   const ref = useRef<T>(null);
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const direction = options.direction ?? "up";
-    const distance = options.distance ?? 40;
-    const duration = options.duration ?? DUR.md;
-    const delay = options.delay ?? 0;
-    const ease = options.ease ?? EASE.cinematic;
-    const once = options.once ?? ST_DEFAULTS.once;
+    const currentOptions = optionsRef.current;
+    const direction = currentOptions.direction ?? "up";
+    const distance = currentOptions.distance ?? 40;
+    const duration = currentOptions.duration ?? DUR.md;
+    const delay = currentOptions.delay ?? 0;
+    const ease = currentOptions.ease ?? EASE.cinematic;
+    const once = currentOptions.once ?? ST_DEFAULTS.once;
 
-    const fromVars: gsap.TweenVars = options.from ?? buildFromVars(direction, distance);
+    const fromVars: gsap.TweenVars = currentOptions.from ?? buildFromVars(direction, distance);
     const toVars: gsap.TweenVars = {
-      ...(options.to ?? { opacity: 1, y: 0, x: 0, scale: 1 }),
+      ...(currentOptions.to ?? { opacity: 1, y: 0, x: 0, scale: 1 }),
       duration,
       delay,
       ease,
     };
 
-    if (options.stagger) {
-      toVars.stagger = options.stagger;
+    if (currentOptions.stagger) {
+      toVars.stagger = currentOptions.stagger;
     }
 
     const ctx = gsap.context(() => {
-      const target = options.childSelector
-        ? el.querySelectorAll(options.childSelector)
+      const target = currentOptions.childSelector
+        ? el.querySelectorAll(currentOptions.childSelector)
         : el;
 
       gsap.fromTo(target, fromVars, {
         ...toVars,
         scrollTrigger: {
           trigger: el,
-          start: options.start ?? ST_DEFAULTS.start,
-          end: options.end ?? ST_DEFAULTS.end,
-          scrub: options.scrub ?? false,
+          start: currentOptions.start ?? ST_DEFAULTS.start,
+          end: currentOptions.end ?? ST_DEFAULTS.end,
+          scrub: currentOptions.scrub ?? false,
           once,
           toggleActions: ST_DEFAULTS.toggleActions,
         },
@@ -86,7 +89,6 @@ export function useRevealAnimation<T extends HTMLElement = HTMLDivElement>(
     }, el);
 
     return () => ctx.revert();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return ref;
