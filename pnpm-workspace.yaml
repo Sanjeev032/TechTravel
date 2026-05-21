@@ -58,6 +58,9 @@ catalog:
 
 autoInstallPeers: false
 
+onlyBuiltDependencies:
+  - esbuild
+
 
 
 overrides:
