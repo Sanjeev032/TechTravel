@@ -16,5 +16,6 @@
     "approvedBuilds": {
       "esbuild": ["0.27.3"]
     }
-  }
+  },
+  "packageManager": "pnpm@9.15.4"
 }
