@@ -8,11 +8,22 @@
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
   "private": true,
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2",
+    "express": "^5",
+    "pino": "^9",
+    "pino-http": "^10",
+    "zod": "^3.25.76"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "packageManager": "pnpm@11.1.3"
 }
