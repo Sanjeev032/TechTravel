@@ -31,6 +31,31 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      onLog(level, log, handler) {
+        if (log.message.includes("Can't resolve original location of error")) {
+          return;
+        }
+        handler(level, log);
+      },
+      output: {
+        manualChunks: {
+          "vendor-motion": ["framer-motion", "gsap", "lenis"],
+          "vendor-charts": ["recharts"],
+          "vendor-ui": [
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-popover",
+          ],
+        },
+      },
+    },
   },
   server: {
     port,
