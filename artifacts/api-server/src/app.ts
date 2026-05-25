@@ -38,7 +38,7 @@ const publicPath = path.resolve(__dirname, "../../namrata-universal/dist/public"
 app.use(express.static(publicPath));
 
 // Fallback all non-API requests to index.html for SPA routing
-app.get("*", (req, res, next) => {
+app.get("/(.*)", (req, res, next) => {
   if (req.path.startsWith("/api")) {
     return next();
   }
