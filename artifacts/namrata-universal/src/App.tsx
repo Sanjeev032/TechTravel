@@ -3,9 +3,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
+import { lazy, Suspense } from "react";
 import NotFound from "@/pages/not-found";
-import Home from "@/pages/home";
-import Travel from "@/pages/travel";
+const Home = lazy(() => import("@/pages/home"));
+const Travel = lazy(() => import("@/pages/travel"));
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,11 +17,17 @@ const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/travel" component={Travel} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#080a0e] flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-[var(--wm-lime)]/20 border-t-[var(--wm-lime)] animate-spin" />
+      </div>
+    }>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/travel" component={Travel} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

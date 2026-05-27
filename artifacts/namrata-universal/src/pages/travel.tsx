@@ -19,7 +19,7 @@ const DESTINATIONS = [
     id: 1,
     name: "Bali, Indonesia",
     tagline: "Island of the Gods",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=70",
     duration: "7 nights",
     rating: 4.9,
     reviews: 248,
@@ -29,7 +29,7 @@ const DESTINATIONS = [
     id: 2,
     name: "Santorini, Greece",
     tagline: "Aegean Dream",
-    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=500&q=70",
     duration: "6 nights",
     rating: 4.8,
     reviews: 192,
@@ -39,7 +39,7 @@ const DESTINATIONS = [
     id: 3,
     name: "Maldives",
     tagline: "Paradise on Earth",
-    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=70",
     duration: "5 nights",
     rating: 5.0,
     reviews: 317,
@@ -49,7 +49,7 @@ const DESTINATIONS = [
     id: 4,
     name: "Kyoto, Japan",
     tagline: "Ancient Serenity",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=70",
     duration: "8 nights",
     rating: 4.7,
     reviews: 183,
@@ -59,7 +59,7 @@ const DESTINATIONS = [
     id: 5,
     name: "Swiss Alps",
     tagline: "Peaks & Solitude",
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=500&q=70",
     duration: "7 nights",
     rating: 4.8,
     reviews: 156,
@@ -69,7 +69,7 @@ const DESTINATIONS = [
     id: 6,
     name: "Dubai, UAE",
     tagline: "Where Luxury Lives",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=70",
     duration: "5 nights",
     rating: 4.9,
     reviews: 271,
@@ -93,7 +93,7 @@ const PACKAGES = [
     accent: "from-zinc-700 to-zinc-600",
     badge: "bg-zinc-600",
     popular: false,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=70",
   },
   {
     id: 2,
@@ -110,7 +110,7 @@ const PACKAGES = [
     accent: "from-amber-700 to-amber-500",
     badge: "bg-amber-600",
     popular: true,
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=70",
   },
   {
     id: 3,
@@ -136,7 +136,7 @@ const PACKAGES = [
     accent: "from-slate-600 to-slate-400",
     badge: "bg-[var(--wm-lime)]",
     popular: false,
-    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=70",
   },
 ];
 
@@ -181,9 +181,10 @@ function TravelHero() {
       {/* Parallax background image */}
       <div ref={imgRef} className="absolute inset-0 scale-110 will-change-transform">
         <img
-          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=85"
+          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=75"
           alt="Luxury travel hero"
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080a0e] via-[#080a0e]/40 to-transparent" />
       </div>
@@ -523,7 +524,7 @@ function TravelCTA() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=70"
           alt="CTA background"
           className="w-full h-full object-cover"
           loading="lazy"
