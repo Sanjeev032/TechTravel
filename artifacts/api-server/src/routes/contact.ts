@@ -42,14 +42,14 @@ router.get("/contact", (req, res) => {
       {
         icon: "Github",
         label: "GitHub",
-        value: "github.com/Sanjeev-Mishra",
-        href: "https://github.com/Sanjeev-Mishra",
+        value: "github.com/Sanjeev032",
+        href: "https://github.com/Sanjeev032",
       },
       {
         icon: "Linkedin",
         label: "LinkedIn",
-        value: "linkedin.com/in/sanjeev-mishra",
-        href: "https://linkedin.com/in/sanjeev-mishra",
+        value: "linkedin.com/in/sanjeev-kumar-4737ba248",
+        href: "https://www.linkedin.com/in/sanjeev-kumar-4737ba248/",
       },
     ],
   });

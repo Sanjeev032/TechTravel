@@ -23,7 +23,7 @@ router.get("/footer", (req, res) => {
         title: "Connect",
         links: [
           { label: "GitHub", href: "https://github.com/Sanjeev032" },
-          { label: "LinkedIn", href: "https://linkedin.com" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/sanjeev-kumar-4737ba248/" },
           { label: "Portfolio", href: "https://portfolio-opal-nine-59.vercel.app/" },
           { label: "Contact", href: "#contact" },
         ],
@@ -40,7 +40,7 @@ router.get("/footer", (req, res) => {
     ],
     socials: [
       { platform: "GitHub", href: "https://github.com/Sanjeev032", icon: "Github" },
-      { platform: "LinkedIn", href: "https://linkedin.com", icon: "Linkedin" },
+      { platform: "LinkedIn", href: "https://www.linkedin.com/in/sanjeev-kumar-4737ba248/", icon: "Linkedin" },
       { platform: "Twitter", href: "https://twitter.com", icon: "Twitter" },
     ],
     copyright: `© ${new Date().getFullYear()} Mishra Travels. All rights reserved.`,
